@@ -1,29 +1,45 @@
 :root {
+    --space: 1rem;
+    --radius: 12px;
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --card: #1e293d;
 
 }
 
-* {
+* { box-sizing: border-box;
 }
 
-html {
+html {font-size: 100%;
 }
 
-body {
+body {margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    background: var(--bg);
+    color: var(--fg);
 }
 
-h1 {
+h1 { font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
 }
 
-p, .card {
+p, .card {font-size: clamp(0.95rem, 1vw + 1rem, 1.125rem);
 }
 
-.site-header, .site-footer {
+.site-header, .site-footer { text-align: center;
+    background: #0b1225;
+    padding: calc(1.5 * var(--space));
 }
 
-.container {
+.container { display: grid;
+    gap: var(--space);
+    padding: var(--space);
 }
 
-.card {
+.card {min-height: 120px;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: calc(var(--space) * 2);
 }
 
 img {
@@ -32,7 +48,8 @@ img {
 @media (min-width: 480px) {
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px){ .container{ grid-template-columns: repeat(2, 1fr);
+                          }
 }
 
 @media (min-width: 1024px) {
